@@ -9,23 +9,10 @@ def infer_breach(value, lowerLimit, upperLimit):
 
 #create abstract class - context for the main class
 class ClassifyTemperature(ABC):
-  def classify_temperature_breach(coolingType, temperatureInC):
+  @abstractmethod
+  def classify_temperature_breach(self,coolingType, temperatureInC):
     pass
   
-  '''def classify_temperature_breach(coolingType, temperatureInC):
-  if coolingType == 'PASSIVE_COOLING':
-    lowerLimit = 0
-    upperLimit = 35
-  elif coolingType == 'HI_ACTIVE_COOLING':
-    lowerLimit = 0
-    upperLimit = 45
-  elif coolingType == 'MED_ACTIVE_COOLING':
-    lowerLimit = 0
-    upperLimit = 40
-  return infer_breach(temperatureInC, lowerLimit, upperLimit)
-  '''
-
-
 lowerLimit = 0
 upperLimit = 0
 class Passive(ClassifyTemperature):
